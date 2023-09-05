@@ -3,6 +3,7 @@ package com.dougFerreira.gerenciamentoDeAmbientesEscolares.models;
 import java.time.LocalDate;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +23,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"data", "periodo", "ambiente"}))
+@Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"data", "periodo", "ambiente_id"}))
 public class Agendamento {
 
 	@Id
