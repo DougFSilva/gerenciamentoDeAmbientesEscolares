@@ -1,8 +1,11 @@
 package com.dougFerreira.gerenciamentoDeAmbientesEscolares.services.ambiente;
 
+import org.springframework.stereotype.Service;
+
 import com.dougFerreira.gerenciamentoDeAmbientesEscolares.models.Ambiente;
 import com.dougFerreira.gerenciamentoDeAmbientesEscolares.repositories.AmbienteRepository;
 
+@Service
 public class EditaAmbiente {
 
 	private final AmbienteRepository repository;
