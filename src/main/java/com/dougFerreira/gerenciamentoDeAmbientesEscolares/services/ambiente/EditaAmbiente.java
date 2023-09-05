@@ -1,5 +1,5 @@
 package com.dougFerreira.gerenciamentoDeAmbientesEscolares.services.ambiente;
 
-public class EditarAmbiente {
+public class EditaAmbiente {
 
 }
