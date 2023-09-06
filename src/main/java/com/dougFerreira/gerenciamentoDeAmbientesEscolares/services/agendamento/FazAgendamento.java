@@ -24,16 +24,20 @@ public class FazAgendamento {
 	private final BuscaAmbiente buscaAmbiente;
 	
 	private final BuscaDocente buscaDocente;
+	
+	private final ValidaAgendamento validaAgendamento;
 
 	public FazAgendamento(AgendamentoRepository repository, BuscaTurma buscaTurma, BuscaAmbiente buscaAmbiente,
-			BuscaDocente buscaDocente) {
+			BuscaDocente buscaDocente, ValidaAgendamento validaAgendamento) {
 		this.repository = repository;
 		this.buscaTurma = buscaTurma;
 		this.buscaAmbiente = buscaAmbiente;
 		this.buscaDocente = buscaDocente;
+		this.validaAgendamento = validaAgendamento;
 	}
 	
 	public Agendamento agendar(LocalDate data, Periodo periodo, Long turma_id, Long ambiente_id, Long docente_id ) {
+		validaAgendamento.validar(data, periodo, ambiente_id);
 		Turma turma = buscaTurma.buscarPeloId(turma_id);
 		Ambiente ambiente = buscaAmbiente.buscarPeloId(ambiente_id);
 		Docente docente = buscaDocente.buscaPeloId(docente_id);
