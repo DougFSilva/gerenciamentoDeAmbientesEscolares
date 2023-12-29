@@ -1,6 +1,7 @@
 package com.dougFerreira.gerenciamentoDeAmbientesEscolares.services.agendamento;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -43,6 +44,10 @@ public class FazAgendamento {
 		Docente docente = buscaDocente.buscaPeloId(docente_id);
 		Agendamento agendamento = new Agendamento(null, data, periodo,turma, ambiente, docente );
 		return repository.save(agendamento);
+	}
+	
+	//Agendar pelos dias da semana entre duas datas
+	public List<Agendamento> agendarPorDiaDaSemana(LocalDate dataInicial, LocalDate dataFinal, Integer diaDaSemana){
 	}
 	
 	
